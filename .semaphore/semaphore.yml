@@ -34,6 +34,9 @@ blocks:
     task:
       jobs:
         - name: Test Integration
+          matrix:
+          - env_var: ARCH
+            values: ["amd64","arm64"]
           commands:
             - make pull-images
             - touch webui/static/index.html
