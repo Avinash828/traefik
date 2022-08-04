@@ -42,7 +42,7 @@ blocks:
             - make pull-images
             - touch webui/static/index.html
             - IN_DOCKER="" make binary
-            - make test-integration
+            - make test-integration ARCH=$ARCH
             - df -h
       epilogue:
         always:
