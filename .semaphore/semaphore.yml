@@ -36,7 +36,7 @@ blocks:
         - name: Test Integration
           matrix:
           - env_var: ARCH
-            values: ["amd64","arm64"]
+            values: ["arm64","amd64"]
           commands:
             - make pull-images
             - touch webui/static/index.html
