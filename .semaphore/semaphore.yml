@@ -38,6 +38,7 @@ blocks:
           - env_var: ARCH
             values: ["arm64","amd64"]
           commands:
+            - uname -m
             - make pull-images
             - touch webui/static/index.html
             - IN_DOCKER="" make binary
