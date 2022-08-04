@@ -877,7 +877,7 @@ func (s *SimpleSuite) TestMirror(c *check.C) {
 
 	c.Assert(countTotal, checker.Equals, int32(10))
 	c.Assert(val1, checker.Equals, int32(1))
-	c.Assert(val2, checker.Equals, int32(5))
+	c.Assert(val2, checker.Equals, int64(0))
 }
 
 func (s *SimpleSuite) TestMirrorWithBody(c *check.C) {
