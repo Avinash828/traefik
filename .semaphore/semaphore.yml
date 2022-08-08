@@ -36,7 +36,7 @@ blocks:
         - name: Test Integration
           matrix:
           - env_var: ARCH
-            values: ["arm64","armv7","armv8"]
+            values: ["amd64","arm64","armv7","armv8"]
           commands:
             - uname -a
             - make pull-images
