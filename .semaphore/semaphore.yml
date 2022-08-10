@@ -59,11 +59,11 @@ blocks:
           - env_var: ARCH
             values: ["arm64"]
           commands:
-            - uname -a
             - make pull-images
             - touch webui/static/index.html
             - IN_DOCKER="" make binary
-            - make test-integration ARCH=$ARCH
+            - make test-integration
+            - uname -a
             - df -h
       epilogue:
         always:
