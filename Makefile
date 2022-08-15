@@ -117,7 +117,7 @@ test-unit: build-dev-image
 test-integration: build-dev-image
 	-docker network create traefik-test-network --driver bridge --subnet 172.31.42.0/24
 	trap 'docker network rm traefik-test-network' EXIT; \
-	$(if $(IN_DOCKER),$(DOCKER_RUN_TRAEFIK_TEST)) ./script/make.sh generate binary test-integration
+	$(if $(IN_DOCKER),$(DOCKER_RUN_TRAEFIK_TEST), ARCH=$ARCH) ./script/make.sh generate binary test-integration
 
 ## Pull all images for integration tests
 .PHONY: pull-images
